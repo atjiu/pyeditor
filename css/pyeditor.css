@@ -1,0 +1,52 @@
+.pyeditor-menu>i {
+  border: 1px solid #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.pyeditor-menu>i:hover {
+  border: 1px solid #ccc;
+}
+
+.pyeditor-pre_div {
+  background-color: #fafafa;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.pyeditor-pre_div img {
+  max-width: 100%;
+}
+
+.pyeditor-upload-area {
+  border: 4px dashed #ddd;
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+}
+
+.pyeditor-upload-area-active {
+  border-color: #7A7A7A
+}
+
+
+/* bootstrap css*/
+
+.progress {
+  margin-bottom: 0;
+  text-align: center;
+  position: relative;
+}
+
+.progress .progress-bar {
+  position: absolute;
+  width: 0;
+}
+
+.progress div {
+  color: #545454;
+  position: absolute;
+  width: 100%;
+}

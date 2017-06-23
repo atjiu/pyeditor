@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>PyEditor</title>
+  <!-- bootstrap css -->
+  <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!-- editor menu -->
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- implement at function -->
+  <link href="//cdn.bootcss.com/at.js/1.5.3/css/jquery.atwho.min.css" rel="stylesheet">
+  <!-- PyEditor css -->
+  <link href="/css/pyeditor.css" rel="stylesheet">
+</head>
+
+<body style="padding-top:20px;">
+  <div class="container">
+    <div class="well">
+      <h2>PyEditor - Lightweight markdown editor</h2>
+      <p>
+        From
+        <a href="https://github.com/tomoya92/pybbs" target="_blank">pybbs</a>
+      </p>
+    </div>
+    <div class="form-group">
+      <span id="pyeditor-menu" class="pyeditor-menu">
+        <i class="fa fa-bold" aria-hidden="true"></i>
+        <i class="fa fa-italic" aria-hidden="true"></i>
+        <i class="fa fa-quote-left" aria-hidden="true"></i>
+        <i class="fa fa-list" aria-hidden="true"></i>
+        <i class="fa fa-list-ol" aria-hidden="true"></i>
+        <i class="fa fa-code" aria-hidden="true"></i>
+        <i class="fa fa-link" aria-hidden="true"></i>
+        <i class="fa fa-picture-o" aria-hidden="true" data-toggle="modal" data-target="#myModal"></i>
+        <i class="fa fa-eye" aria-hidden="true"></i>
+      </span>
+      <textarea class="form-control" name="content" id="content" rows="15" placeholder="typing..."></textarea>
+      <!-- preview editor content -->
+      <div class="pyeditor-pre_div hidden"></div>
+      <!-- upload image modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Upload Image</h4>
+            </div>
+            <div class="modal-body">
+              <p class="pyeditor-upload-area">
+                <button type="button" class="btn btn-success" id="selectPicBtn">Select Image</button>
+                <input type="file" class="hidden" name="file" accept="image/png,image/gif,image/jpg,image/jpeg" id="selectFileInput" />
+              </p>
+              <div class="progress hidden">
+                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="pyeditor-percentage"></div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <span class="pull-left text-left">
+                Click the upload button, select the picture upload <br/>Or drag the picture here to upload directly
+              </span>
+              <button type="button" class="btn btn-primary btn-sm" id="upload-modal-btn" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- jquery -->
+  <script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- upload js -->
+  <script src="/js/jquery.ui.widget.js"></script>
+  <script src="/js/jquery.upload.js"></script>
+  <!-- render markdown to html -->
+  <script src="//cdn.bootcss.com/marked/0.3.6/marked.min.js"></script>
+  <!-- atwho.js dependency -->
+  <script src="//cdn.bootcss.com/Caret.js/0.3.1/jquery.caret.min.js"></script>
+  <script src="//cdn.bootcss.com/at.js/1.5.3/js/jquery.atwho.min.js"></script>
+  <!-- PyEditor js -->
+  <script src="/js/pyeditor.js"></script>
+</body>
+
+</html>
