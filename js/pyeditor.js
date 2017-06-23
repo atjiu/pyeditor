@@ -206,9 +206,11 @@
 
   // upload image start
   var selectFileInputE = $("#selectFileInput");
-  $("#selectPicBtn").click(function() {
-    selectFileInputE.click();
-  });
+  var uploadAreaE = $(".pyeditor-upload-area");
+
+  // $("#selectPicBtn").click(function() {
+  //   selectFileInputE.click();
+  // });
 
   selectFileInputE.fileupload({
     url: '/upload',
@@ -229,27 +231,26 @@
       } else {
         alert(data.result.description);
       }
+    },
+    progressall: function(e, data) {
+      $(".progress").removeClass("hidden");
+      var progress = parseInt(data.loaded / data.total * 100, 10);
+      $('.progress-bar').css(
+        'width',
+        progress + '%'
+      );
+      $('.pyeditor-percentage').removeClass("hidden").text(progress + '%');
     }
   });
 
-  $('#selectFileInput').bind('fileuploadprogress', function(e, data) {
-    $(".progress").removeClass("hidden");
-    var progress = parseInt(data.loaded / data.total * 100, 10);
-    $('.progress-bar').css(
-      'width',
-      progress + '%'
-    );
-    $('.pyeditor-percentage').removeClass("hidden").text(progress + '%');
+  uploadAreaE.bind('dragover', function(e) {
+    e.preventDefault();
+    uploadAreaE.addClass("pyeditor-upload-area-active");
   });
 
-  $(".pyeditor-upload-area").bind('dragover', function(e) {
+  uploadAreaE.bind('dragleave', function(e) {
     e.preventDefault();
-    $(".pyeditor-upload-area").addClass("pyeditor-upload-area-active");
-  });
-
-  $(".pyeditor-upload-area").bind('dragleave', function(e) {
-    e.preventDefault();
-    $(".pyeditor-upload-area").removeClass("pyeditor-upload-area-active");
+    uploadAreaE.removeClass("pyeditor-upload-area-active");
   });
 
   //upload image end
