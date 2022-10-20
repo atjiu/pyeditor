@@ -4,7 +4,7 @@
 
 PyEditor - LightWeight Markdown Editor
 
-From [pybbs](https://github.com/tomoya92/pybbs)
+From [pybbs](https://github.com/atjiu/pybbs)
 
 ## Preview
 
